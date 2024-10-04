@@ -2,4 +2,16 @@
 --  I promise not to create any merge conflicts in this directory :)
 --
 -- See the kickstart.nvim README for more information
-return {}
+return {
+    { 'ellisonleao/glow.nvim', cmd = 'Glow', opts = {} },
+    {
+      'lambdalisue/suda.vim',
+      keys = {
+        { '<leader>W', ':SudaWrite<CR>', desc = 'Suda Write' },
+      },
+      cmd = {
+        'SudaRead',
+        'SudaWrite',
+      },
+    },
+  }

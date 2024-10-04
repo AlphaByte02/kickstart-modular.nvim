@@ -17,6 +17,28 @@ return {
       -- - sr)'  - [S]urround [R]eplace [)] [']
       require('mini.surround').setup()
 
+      require('mini.bufremove').setup()
+      vim.keymap.set('n', '<leader>x', require('mini.bufremove').delete, { desc = 'Remove buffer' })
+
+      require('mini.trailspace').setup()
+
+      require('mini.move').setup {
+        mappings = {
+          left = '<A-left>',
+          down = '<A-down>',
+          up = '<A-up>',
+          right = '<A-right>',
+          line_left = '<A-left>',
+          line_down = '<A-down>',
+          line_up = '<A-up>',
+          line_right = '<A-right>',
+        },
+        options = {
+          reindent_linewise = true,
+        },
+      }
+
+
       -- Simple and easy statusline.
       --  You could remove this setup call if you don't like it,
       --  and try some other statusline plugin
